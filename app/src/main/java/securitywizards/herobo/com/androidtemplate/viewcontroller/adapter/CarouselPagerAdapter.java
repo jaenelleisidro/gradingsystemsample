@@ -31,6 +31,11 @@ import securitywizards.herobo.com.androidtemplate.viewcontroller.fragment.sample
 import securitywizards.herobo.com.androidtemplate.viewcontroller.fragment.samples.material.SpinnersFragment;
 import securitywizards.herobo.com.androidtemplate.viewcontroller.fragment.samples.material.SwitchesFragment;
 import securitywizards.herobo.com.androidtemplate.viewcontroller.fragment.samples.material.TextfieldFragment;
+import securitywizards.herobo.com.androidtemplate.viewcontroller.gradingsystem.GradesFragment;
+import securitywizards.herobo.com.androidtemplate.viewcontroller.gradingsystem.LogoutFragment;
+import securitywizards.herobo.com.androidtemplate.viewcontroller.gradingsystem.NewStudentFragment;
+import securitywizards.herobo.com.androidtemplate.viewcontroller.gradingsystem.StudentListFragment;
+import securitywizards.herobo.com.androidtemplate.viewcontroller.gradingsystem.ViewFragment;
 
 
 /**
@@ -53,185 +58,54 @@ public class CarouselPagerAdapter extends FragmentPagerAdapter {
         list.add(new FragmentGenerate() {
             @Override
             public Fragment newInstance() {
-                return SimpleListFragment.newInstance();
+                return StudentListFragment.newInstance();
             }
             @Override
             public String instanceName() {
-                return "Simple List";
+                return "Students";
             }
         });
         list.add(new FragmentGenerate() {
             @Override
             public Fragment newInstance() {
-                return MoviesFragment.newInstance();
+                return NewStudentFragment.newInstance();
             }
             @Override
             public String instanceName() {
-                return "Movies";
+                return "New Student";
             }
         });
         list.add(new FragmentGenerate() {
             @Override
             public Fragment newInstance() {
-                return ButtonFragment.newInstance();
+                return GradesFragment.newInstance();
             }
             @Override
             public String instanceName() {
-                return "Buttons";
+                return "Grades";
             }
         });
         list.add(new FragmentGenerate() {
             @Override
             public Fragment newInstance() {
-                return DialogsFragment.newInstance();
+                return ViewFragment.newInstance();
             }
             @Override
             public String instanceName() {
-                return "Dialogs";
+                return "View";
             }
         });
         list.add(new FragmentGenerate() {
             @Override
             public Fragment newInstance() {
-                return FabFragment.newInstance();
+                return LogoutFragment.newInstance();
             }
             @Override
             public String instanceName() {
-                return "FAB";
-            }
-        });
-        list.add(new FragmentGenerate() {
-            @Override
-            public Fragment newInstance() {
-                return ProgressFragment.newInstance();
-            }
-            @Override
-            public String instanceName() {
-                return "Progress";
-            }
-        });
-        list.add(new FragmentGenerate() {
-            @Override
-            public Fragment newInstance() {
-                return SliderFragment.newInstance();
-            }
-            @Override
-            public String instanceName() {
-                return "Slider";
-            }
-        });
-        list.add(new FragmentGenerate() {
-            @Override
-            public Fragment newInstance() {
-                return SnackbarFragment.newInstance();
-            }
-            @Override
-            public String instanceName() {
-                return "Snackbar";
-            }
-        });
-        list.add(new FragmentGenerate() {
-            @Override
-            public Fragment newInstance() {
-                return SpinnersFragment.newInstance();
-            }
-            @Override
-            public String instanceName() {
-                return "Spinner";
-            }
-        });
-        list.add(new FragmentGenerate() {
-            @Override
-            public Fragment newInstance() {
-                return SwitchesFragment.newInstance();
-            }
-            @Override
-            public String instanceName() {
-                return "Switches";
-            }
-        });
-        list.add(new FragmentGenerate() {
-            @Override
-            public Fragment newInstance() {
-                return TextfieldFragment.newInstance();
-            }
-            @Override
-            public String instanceName() {
-                return "Textfield";
-            }
-        });
-        list.add(new FragmentGenerate() {
-            @Override
-            public Fragment newInstance() {
-                return ParallaxFragment.newInstance();
-            }
-            @Override
-            public String instanceName() {
-                return "Parallax";
-            }
-        });
-        list.add(new FragmentGenerate() {
-            @Override
-            public Fragment newInstance() {
-                return ListViewParallaxFragment.newInstance();
-            }
-            @Override
-            public String instanceName() {
-                return "ListView Parallax";
+                return "Logout";
             }
         });
 
-
-        list.add(new FragmentGenerate() {
-            @Override
-            public Fragment newInstance() {
-                return SwipeFragment.newInstance();
-            }
-            @Override
-            public String instanceName() {
-                return "Swipe";
-            }
-        });
-        list.add(new FragmentGenerate() {
-            @Override
-            public Fragment newInstance() {
-                return DaimajaSliderFragment.newInstance();
-            }
-            @Override
-            public String instanceName() {
-                return "Daimaja Slider";
-            }
-        });
-        list.add(new FragmentGenerate() {
-            @Override
-            public Fragment newInstance() {
-                return DatabaseListFragment.newInstance();
-            }
-            @Override
-            public String instanceName() {
-                return "Database List";
-            }
-        });
-        list.add(new FragmentGenerate() {
-            @Override
-            public Fragment newInstance() {
-                return SweetDialogFragment.newInstance();
-            }
-            @Override
-            public String instanceName() {
-                return "Sweet Dialog";
-            }
-        });
-        list.add(new FragmentGenerate() {
-            @Override
-            public Fragment newInstance() {
-                return SimpleWebViewFragment.newInstance("http://tie.com");
-            }
-            @Override
-            public String instanceName() {
-                return "Simple webview";
-            }
-        });
     }
 
 

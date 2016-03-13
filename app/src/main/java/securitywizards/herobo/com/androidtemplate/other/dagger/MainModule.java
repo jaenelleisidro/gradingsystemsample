@@ -20,6 +20,7 @@ import retrofit.client.OkClient;
 import retrofit.converter.GsonConverter;
 import securitywizards.herobo.com.androidtemplate.model.businesslayer.BoxRepository;
 import securitywizards.herobo.com.androidtemplate.model.businesslayer.MovieService;
+import securitywizards.herobo.com.androidtemplate.model.businesslayer.StudentRepository;
 import securitywizards.herobo.com.androidtemplate.model.dataaccesslayer.MovieHttpService;
 import securitywizards.herobo.com.androidtemplate.model.dataaccesslayer.greendao.DaoMaster;
 import securitywizards.herobo.com.androidtemplate.model.dataaccesslayer.greendao.DaoSession;
@@ -29,6 +30,7 @@ import securitywizards.herobo.com.androidtemplate.other.retrofit.RestErrorHandle
 import securitywizards.herobo.com.androidtemplate.other.retrofit.UserAgentProvider;
 import securitywizards.herobo.com.androidtemplate.other.helper.AndroidUtils;
 import securitywizards.herobo.com.androidtemplate.other.helper.PostFromAnyThreadBus;
+import securitywizards.herobo.com.androidtemplate.viewcontroller.activity.LoginActivity;
 import securitywizards.herobo.com.androidtemplate.viewcontroller.activity.MainActivity;
 import securitywizards.herobo.com.androidtemplate.viewcontroller.activity.MovieActivity;
 import securitywizards.herobo.com.androidtemplate.viewcontroller.fragment.BaseFragment;
@@ -48,6 +50,12 @@ import dagger.Provides;
 import securitywizards.herobo.com.androidtemplate.viewcontroller.fragment.samples.SimpleWebViewFragment;
 import securitywizards.herobo.com.androidtemplate.viewcontroller.fragment.samples.SweetDialogFragment;
 import securitywizards.herobo.com.androidtemplate.viewcontroller.fragment.samples.SwipeFragment;
+import securitywizards.herobo.com.androidtemplate.viewcontroller.gradingsystem.GradesFragment;
+import securitywizards.herobo.com.androidtemplate.viewcontroller.gradingsystem.LoginFragment;
+import securitywizards.herobo.com.androidtemplate.viewcontroller.gradingsystem.LogoutFragment;
+import securitywizards.herobo.com.androidtemplate.viewcontroller.gradingsystem.NewStudentFragment;
+import securitywizards.herobo.com.androidtemplate.viewcontroller.gradingsystem.StudentListFragment;
+import securitywizards.herobo.com.androidtemplate.viewcontroller.gradingsystem.ViewFragment;
 import securitywizards.herobo.com.androidtemplate.viewcontroller.service.DownloadService;
 
 /**
@@ -77,6 +85,13 @@ import securitywizards.herobo.com.androidtemplate.viewcontroller.service.Downloa
                 , SweetDialogFragment.class
                 , ListViewParallaxFragment.class
                 , SimpleWebViewFragment.class
+                ,StudentListFragment.class
+                ,LoginFragment.class
+                , LoginActivity.class
+                , NewStudentFragment.class
+                , GradesFragment.class
+                , LogoutFragment.class
+                , ViewFragment.class
         }
 )
 public class MainModule {
@@ -173,6 +188,11 @@ public class MainModule {
     @Provides
     BoxRepository provideBoxRepository(DaoSession daoSession){
         return new BoxRepository(daoSession);
+    }
+    @Singleton
+    @Provides
+    StudentRepository provideStudentRepository(DaoSession daoSession){
+        return new StudentRepository(daoSession);
     }
 
 

@@ -7,12 +7,24 @@ import de.greenrobot.daogenerator.Schema;
 public class MyDaoGenerator {
 
     public static void main(String args[]) throws Exception {
-        Schema schema = new Schema(3, "securitywizards.herobo.com.androidtemplate.model.dataaccesslayer.greendao");
+        Schema schema = new Schema(20, "securitywizards.herobo.com.androidtemplate.model.dataaccesslayer.greendao");
         Entity box = schema.addEntity("Box");
         box.addIdProperty();
         box.addStringProperty("name");
         box.addIntProperty("slots");
         box.addStringProperty("description");
+
+        Entity student=schema.addEntity("Student");
+        student.addIdProperty();
+        student.addStringProperty("firstname");
+        student.addStringProperty("lastname");
+        student.addStringProperty("section");
+        student.addStringProperty("program");
+
+
+
+
+
         String outputDir="app/src/main/java";
         new DaoGenerator().generateAll(schema,outputDir);
 //TODO : running it via gradle doesnt work. so im running it temporarily here directly instead. in the future, we need to fix this

@@ -253,4 +253,9 @@ public class AndroidUtils {
         context.startActivity(Intent.createChooser(intent,dialogTitle));
 
     }
+
+    public static void loadActivity(Activity me,Class<?> nextActivity){
+        Intent myIntent = new Intent(me, nextActivity);
+        me.startActivity(myIntent);
+    }
 }

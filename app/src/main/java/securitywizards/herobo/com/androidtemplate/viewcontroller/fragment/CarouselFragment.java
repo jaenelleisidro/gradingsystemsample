@@ -5,6 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 
 import com.viewpagerindicator.TitlePageIndicator;
 
@@ -30,10 +31,10 @@ public class CarouselFragment extends BaseFragment {
 
     @Override
     public void onActivityCreated2(Bundle savedInstanceState) {
-        pager.setAdapter(new CarouselPagerAdapter(getResources(), getChildFragmentManager()));
+        final CarouselPagerAdapter adapter=new CarouselPagerAdapter(getResources(), getChildFragmentManager());
+        pager.setAdapter(adapter);
         indicator.setViewPager(pager);
         pager.setCurrentItem(currentItem);
-
     }
 
     int currentItem=0;
@@ -46,7 +47,6 @@ public class CarouselFragment extends BaseFragment {
         currentItem=pager.getCurrentItem();
         outState.putInt("currentItem", pager.getCurrentItem());
     }
-
     public static CarouselFragment newInstance(){
         return new CarouselFragment();
     }
